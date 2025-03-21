@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./RecipeList.css";
 
 const RecipeListPage = () => {
   const [recipes, setRecipes] = useState<any[]>([]);
@@ -13,8 +14,8 @@ const RecipeListPage = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Recipes</h1>
+    <div className="main-page">
+      <h1 className="main-title">Recipes</h1>
       <ul>
         {recipes.map((recipe) => (
           <li key={recipe.idMeal}>

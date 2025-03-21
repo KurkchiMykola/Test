@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import "./RecipeInfo.css";
 
 const RecipeInfoPage = () => {
   const { id } = useParams();
@@ -16,13 +17,18 @@ const RecipeInfoPage = () => {
   if (!recipe) return <p>Loading...</p>;
 
   return (
-    <div>
-      <h1>{recipe.strMeal}</h1>
-      <img src={recipe.strMealThumb} alt={recipe.strMeal} width="300" />
-      <p>
+    <div className="recipe-info">
+      <h1 className="recipe-title">{recipe.strMeal}</h1>
+      <img
+        className="image"
+        src={recipe.strMealThumb}
+        alt={recipe.strMeal}
+        width="300"
+      />
+      <p className="country-info">
         <strong>Country:</strong> {recipe.strArea}
       </p>
-      <p>
+      <p className="instructions-info">
         <strong>Instructions:</strong> {recipe.strInstructions}
       </p>
     </div>
